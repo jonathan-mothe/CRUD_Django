@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de Autores</title>
+</head>
+<body>
+    <ul>
+        {% for author in authors %}
+            <a href="{% url 'update_author' author.id %}">
+                <li> {{ author.name }}</li>
+            </a>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'create_author' %}">New author</a><br>
+    
+    <ul>
+        {% for book in books %}
+            <a href="{% url 'update_book' book.id %}">
+                <li> {{ book.name }}</li>
+            </a>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'create_book' %}">New book</a><br>
+</body>
+</html>
