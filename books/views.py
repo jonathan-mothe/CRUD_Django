@@ -19,7 +19,7 @@ def create_author(request):
 
 
 def update_author(request, id):
-    author = Author().objects.get(id=id)
+    author = Author.objects.get(id=id)
     form = AuthorForm(request.POST or None, instance=author)
 
     if form.is_valid():
